@@ -16,7 +16,6 @@ function addRuleToDocument(rule) {
   document.getElementsByTagName("head")[0].appendChild(css);
 }
 
-
 module.exports = function(fontFamily, options) {
   if (!options.src || options.src.length === 0) {
     throw new Error('Must have at least one font source!');
@@ -30,8 +29,12 @@ module.exports = function(fontFamily, options) {
     throw new Error('No WOFF format font detected!');
   }
 
+  // fixed up with url(...)
+  woffSrc = 'url(' + woffSrc + ')';
+  options.src = [woffSrc];
+
   if (window.FontFace) {
-    var fontFace = new FontFace(fontFamily, 'url(' + woffSrc + ')');
+    var fontFace = new FontFace(fontFamily, woffSrc);
 
     // document.fonts has a .has method on Chrome but seems niave
     // so just add for now...
