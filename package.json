@@ -1,6 +1,6 @@
 {
   "name": "teespring-webfont-loader",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "Webfont loader with ready promise",
   "main": "index.js",
   "scripts": {
@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/TeespringLabs/webfont-loader",
   "dependencies": {
-    "font-face-observer": "0.0.2",
     "font-face-rule": "0.0.2",
+    "teespring-font-face-observer": "0.0.2",
     "underscore": "^1.8.2"
   }
 }
